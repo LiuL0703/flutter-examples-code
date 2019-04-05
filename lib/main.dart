@@ -3,6 +3,7 @@ import './view/using_theme.dart';
 import './view/random_word.dart';
 import './view/stateless_widgets.dart';
 import './view/stateful_widget.dart';
+import './view/using_edittext.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         "random_words": (context)=> new RandomWordsWidget(),
         "stateless_widget":(context)=> new StatelessDemo(),
         "stateful_widget":(context)=> new StatefulDemo(),
+        "using_edittext": (context)=> new EditText(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -77,6 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "stateful_widget");
+              },
+            ),
+            FlatButton(
+              child: Text('EditText Widget'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_edittext");
               },
             ),
           ],
