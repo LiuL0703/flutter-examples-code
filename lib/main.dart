@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './view/using_theme.dart';
+import './view/random_word.dart';
+import './view/stateless_widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,36 +10,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 关掉debug样式
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        // accentColor: Colors.lightBlueAccent,
+        // 设置背景样式
+        // backgroundColor: Colors.black12,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // 添加新页面
+      routes: {
+        "using_theme": (context)=> new UsingTheme(),
+        "random_words": (context)=> new RandomWordsWidget(),
+        "stateless_widget":(context)=> new StatelessDemo(),
+      },
+      home: MyHomePage(title: '首页'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -48,11 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -92,12 +82,31 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            FlatButton(
+              child: Text('Using Theme Demo'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_theme");
+              },
+            ),
+            FlatButton(
+              child: Text('Random Words Demo'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "random_words");
+              },
+            ),
+            FlatButton(
+              child: Text('Stateless Widget'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "stateless_widget");
+              },
+            ),
+            
           ],
         ),
       ),
