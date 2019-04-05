@@ -7,6 +7,7 @@ import './view/using_edittext.dart';
 import './view/load_local_image.dart';
 import './view/load_local_json.dart';
 import './view/using_http_get.dart';
+import './view/using_alert_dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         "load_local_image": (context)=> new LoadLocalImage(),
         "load_local_json": (context)=> new LoadLocalJson(),
         "using_http_get": (context)=> new GetHttpData(),
+        "using_alert_dialog": (context)=> new UsingAlertDialog(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -114,6 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_http_get");
+              },
+            ),
+            FlatButton(
+              child: Text('Using Alert Dialog',style: textStyle),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_alert_dialog");
               },
             ),
           ],
