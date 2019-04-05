@@ -6,6 +6,7 @@ import './view/stateful_widget.dart';
 import './view/using_edittext.dart';
 import './view/load_local_image.dart';
 import './view/load_local_json.dart';
+import './view/using_http_get.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "using_edittext": (context)=> new EditText(),
         "load_local_image": (context)=> new LoadLocalImage(),
         "load_local_json": (context)=> new LoadLocalJson(),
+        "using_http_get": (context)=> new GetHttpData(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -47,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var textStyle = new TextStyle(fontSize: 20.0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,52 +61,59 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(
-              child: Text('Using Theme Demo'),
+              child: Text('Using Theme Demo',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_theme");
               },
             ),
             FlatButton(
-              child: Text('Random Words Demo'),
+              child: Text('Random Words Demo',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "random_words");
               },
             ),
             FlatButton(
-              child: Text('Stateless Widget'),
+              child: Text('Stateless Widget',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "stateless_widget");
               },
             ),
             FlatButton(
-              child: Text('Stateful Widget'),
+              child: Text('Stateful Widget',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "stateful_widget");
               },
             ),
             FlatButton(
-              child: Text('EditText Widget'),
+              child: Text('EditText Widget',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_edittext");
               },
             ),
             FlatButton(
-              child: Text('Load Local Image'),
+              child: Text('Load Local Image',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "load_local_image");
               },
             ),
             FlatButton(
-              child: Text('Load Local Json'),
+              child: Text('Load Local Json',style: textStyle),
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "load_local_json");
+              },
+            ),
+            FlatButton(
+              child: Text('Using Http Get',style: textStyle),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_http_get");
               },
             ),
           ],
