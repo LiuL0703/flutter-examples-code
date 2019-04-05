@@ -4,6 +4,7 @@ import './view/random_word.dart';
 import './view/stateless_widgets.dart';
 import './view/stateful_widget.dart';
 import './view/using_edittext.dart';
+import './view/load_local_image.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         "stateless_widget":(context)=> new StatelessDemo(),
         "stateful_widget":(context)=> new StatefulDemo(),
         "using_edittext": (context)=> new EditText(),
+        "load_local_image":(context)=> new LoadLocalImage(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -86,6 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_edittext");
+              },
+            ),
+            FlatButton(
+              child: Text('Load Local Image'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "load_local_image");
               },
             ),
           ],
