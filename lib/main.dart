@@ -5,6 +5,7 @@ import './view/stateless_widgets.dart';
 import './view/stateful_widget.dart';
 import './view/using_edittext.dart';
 import './view/load_local_image.dart';
+import './view/load_local_json.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,10 +27,11 @@ class MyApp extends StatelessWidget {
       routes: {
         "using_theme": (context)=> new UsingTheme(),
         "random_words": (context)=> new RandomWordsWidget(),
-        "stateless_widget":(context)=> new StatelessDemo(),
-        "stateful_widget":(context)=> new StatefulDemo(),
+        "stateless_widget": (context)=> new StatelessDemo(),
+        "stateful_widget": (context)=> new StatefulDemo(),
         "using_edittext": (context)=> new EditText(),
-        "load_local_image":(context)=> new LoadLocalImage(),
+        "load_local_image": (context)=> new LoadLocalImage(),
+        "load_local_json": (context)=> new LoadLocalJson(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -95,6 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "load_local_image");
+              },
+            ),
+            FlatButton(
+              child: Text('Load Local Json'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "load_local_json");
               },
             ),
           ],
