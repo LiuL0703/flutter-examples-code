@@ -8,6 +8,7 @@ import './view/load_local_image.dart';
 import './view/load_local_json.dart';
 import './view/using_http_get.dart';
 import './view/using_alert_dialog.dart';
+import './view/using_stepper.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         "load_local_json": (context)=> new LoadLocalJson(),
         "using_http_get": (context)=> new GetHttpData(),
         "using_alert_dialog": (context)=> new UsingAlertDialog(),
+        "using_stepper": (context)=> new UsingStepper(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -123,6 +125,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_alert_dialog");
+              },
+            ),
+            FlatButton(
+              child: Text('Using Stepper',style: textStyle),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_stepper");
               },
             ),
           ],
