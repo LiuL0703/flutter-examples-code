@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './view/using_theme.dart';
 import './view/random_word.dart';
 import './view/stateless_widgets.dart';
+import './view/stateful_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         "using_theme": (context)=> new UsingTheme(),
         "random_words": (context)=> new RandomWordsWidget(),
         "stateless_widget":(context)=> new StatelessDemo(),
+        "stateful_widget":(context)=> new StatefulDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -106,7 +108,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "stateless_widget");
               },
             ),
-            
+            FlatButton(
+              child: Text('Stateful Widget'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "stateful_widget");
+              },
+            ),
           ],
         ),
       ),
