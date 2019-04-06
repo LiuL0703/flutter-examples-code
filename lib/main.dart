@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import './view/using_theme.dart';
-import './view/random_word.dart';
-import './view/stateless_widgets.dart';
-import './view/stateful_widget.dart';
-import './view/using_edittext.dart';
-import './view/load_local_image.dart';
-import './view/load_local_json.dart';
-import './view/using_http_get.dart';
-import './view/using_alert_dialog.dart';
-import './view/using_stepper.dart';
+import 'view/using_theme.dart';
+import 'view/random_word.dart';
+import 'view/stateless_widgets.dart';
+import 'view/stateful_widget.dart';
+import 'view/using_edittext.dart';
+import 'view/load_local_image.dart';
+import 'view/load_local_json.dart';
+import 'view/using_http_get.dart';
+import 'view/using_alert_dialog.dart';
+import 'view/using_stepper.dart';
 
 void main() => runApp(MyApp());
 
