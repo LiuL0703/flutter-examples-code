@@ -16,6 +16,7 @@ import 'package:flutter_examples_code/view/using_gradient/using_gradient.dart';
 import 'package:flutter_examples_code/view/using_listview/using_listview.dart';
 import 'package:flutter_examples_code/view/using_snackbar.dart';
 import 'package:flutter_examples_code/view/grid_layout.dart';
+import 'package:flutter_examples_code/view/dropdown_button.dart';
 
 void main() => runApp(MyApp());
 
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         "using_listview": (context)=> new UsingListView(),
         "using_snackbar": (context)=> new UsingSnackBar(),
         "grid_layout": (context)=> new GridLayout(),
+        "dropdown_button": (context)=> new DropDownButton(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -197,6 +199,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "grid_layout");
+                },
+              ),
+              FlatButton(
+                child: Text('Dropdown Button',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "dropdown_button");
                 },
               ),
             ],
