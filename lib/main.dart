@@ -9,6 +9,7 @@ import 'view/load_local_json.dart';
 import 'view/using_http_get.dart';
 import 'view/using_alert_dialog.dart';
 import 'view/using_stepper.dart';
+import 'package:flutter_examples_code/view/using_tab/using_tab.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         "using_http_get": (context)=> new GetHttpData(),
         "using_alert_dialog": (context)=> new UsingAlertDialog(),
         "using_stepper": (context)=> new UsingStepper(),
+        "using_tab": (context)=> new UsingTab(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -132,6 +134,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "using_stepper");
+              },
+            ),
+            FlatButton(
+              child: Text('Using Tab',style: textStyle),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "using_tab");
               },
             ),
           ],
