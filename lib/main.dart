@@ -15,6 +15,7 @@ import 'package:flutter_examples_code/view/using_custom_fonts/using_custom_fonts
 import 'package:flutter_examples_code/view/using_gradient/using_gradient.dart';
 import 'package:flutter_examples_code/view/using_listview/using_listview.dart';
 import 'package:flutter_examples_code/view/using_snackbar.dart';
+import 'package:flutter_examples_code/view/grid_layout.dart';
 
 void main() => runApp(MyApp());
 
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         "using_gradient": (context)=> new UsingGradient(),
         "using_listview": (context)=> new UsingListView(),
         "using_snackbar": (context)=> new UsingSnackBar(),
+        "grid_layout": (context)=> new GridLayout(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -188,6 +190,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "using_snackbar");
+                },
+              ),
+              FlatButton(
+                child: Text('Grid Layout',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "grid_layout");
                 },
               ),
             ],
