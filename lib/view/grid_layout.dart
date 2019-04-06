@@ -18,16 +18,21 @@ class UsingGridView {
   Card getStructuredGridCell(name, image){
     return new Card(
       elevation: 1.5,
-      child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.max,
-        verticalDirection: VerticalDirection.down,
-        children: <Widget>[
-          new Image(image: new AssetImage('data_repo/img/'+image)),
-          new Center(
-            child: new Text(name),
-          ),
-        ],
+      child: new GestureDetector(
+        onTap: (){
+          print('current name is $name');
+        },
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          verticalDirection: VerticalDirection.down,
+          children: <Widget>[
+            new Image(image: new AssetImage('data_repo/img/'+image)),
+            new Center(
+              child: new Text(name),
+            ),
+          ],
+        ),
       ),
     );
   }
