@@ -11,6 +11,7 @@ import 'view/using_alert_dialog.dart';
 import 'view/using_stepper.dart';
 import 'package:flutter_examples_code/view/using_tab/using_tab.dart';
 import 'package:flutter_examples_code/view/using_bottom_nav_bar/using_bottom_nav_bar.dart';
+import 'package:flutter_examples_code/view/using_custom_fonts/using_custom_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         "using_stepper": (context)=> new UsingStepper(),
         "using_tab": (context)=> new UsingTab(),
         "using_bottom_nav_tab": (context)=> new UsingBottomNavTab(),
+        "using_custom_fonts": (context)=> new UsingCustomFonts(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -65,94 +67,104 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-              child: Text('Using Theme Demo',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_theme");
-              },
-            ),
-            FlatButton(
-              child: Text('Random Words Demo',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "random_words");
-              },
-            ),
-            FlatButton(
-              child: Text('Stateless Widget',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "stateless_widget");
-              },
-            ),
-            FlatButton(
-              child: Text('Stateful Widget',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "stateful_widget");
-              },
-            ),
-            FlatButton(
-              child: Text('EditText Widget',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_edittext");
-              },
-            ),
-            FlatButton(
-              child: Text('Load Local Image',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "load_local_image");
-              },
-            ),
-            FlatButton(
-              child: Text('Load Local Json',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "load_local_json");
-              },
-            ),
-            FlatButton(
-              child: Text('Using Http Get',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_http_get");
-              },
-            ),
-            FlatButton(
-              child: Text('Using Alert Dialog',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_alert_dialog");
-              },
-            ),
-            FlatButton(
-              child: Text('Using Stepper',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_stepper");
-              },
-            ),
-            FlatButton(
-              child: Text('Using Tab',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_tab");
-              },
-            ),
-            FlatButton(
-              child: Text('Using Bottom Nav Tab',style: textStyle),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pushNamed(context, "using_bottom_nav_tab");
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                child: Text('Using Theme Demo',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_theme");
+                },
+              ),
+              FlatButton(
+                child: Text('Random Words Demo',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "random_words");
+                },
+              ),
+              FlatButton(
+                child: Text('Stateless Widget',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "stateless_widget");
+                },
+              ),
+              FlatButton(
+                child: Text('Stateful Widget',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "stateful_widget");
+                },
+              ),
+              FlatButton(
+                child: Text('EditText Widget',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_edittext");
+                },
+              ),
+              FlatButton(
+                child: Text('Load Local Image',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "load_local_image");
+                },
+              ),
+              FlatButton(
+                child: Text('Load Local Json',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "load_local_json");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Http Get',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_http_get");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Alert Dialog',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_alert_dialog");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Stepper',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_stepper");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Tab',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_tab");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Bottom Nav Tab',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_bottom_nav_tab");
+                },
+              ),
+              FlatButton(
+                child: Text('Using Custom Fonts',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_custom_fonts");
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

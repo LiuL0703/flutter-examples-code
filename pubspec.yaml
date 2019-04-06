@@ -74,3 +74,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: data_repo/fonts/Pacifico-Regular.ttf
+          weight: 400
