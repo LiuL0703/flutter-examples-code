@@ -14,6 +14,7 @@ import 'package:flutter_examples_code/view/using_bottom_nav_bar/using_bottom_nav
 import 'package:flutter_examples_code/view/using_custom_fonts/using_custom_fonts.dart';
 import 'package:flutter_examples_code/view/using_gradient/using_gradient.dart';
 import 'package:flutter_examples_code/view/using_listview/using_listview.dart';
+import 'package:flutter_examples_code/view/using_snackbar.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         "using_custom_fonts": (context)=> new UsingCustomFonts(),
         "using_gradient": (context)=> new UsingGradient(),
         "using_listview": (context)=> new UsingListView(),
+        "using_snackbar": (context)=> new UsingSnackBar(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -179,6 +181,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "using_listview");
+                },
+              ),
+              FlatButton(
+                child: Text('Using SnackBar',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "using_snackbar");
                 },
               ),
             ],
