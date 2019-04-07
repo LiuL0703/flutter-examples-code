@@ -17,6 +17,7 @@ import 'package:flutter_examples_code/view/using_listview/using_listview.dart';
 import 'package:flutter_examples_code/view/using_snackbar.dart';
 import 'package:flutter_examples_code/view/grid_layout.dart';
 import 'package:flutter_examples_code/view/dropdown_button.dart';
+import 'view/image_from_network.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         "using_snackbar": (context)=> new UsingSnackBar(),
         "grid_layout": (context)=> new GridLayout(),
         "dropdown_button": (context)=> new DropDownButton(),
+        "image_from_network": (context)=> new ImageFromNetwork(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -206,6 +208,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "dropdown_button");
+                },
+              ),
+              FlatButton(
+                child: Text('Image from Network',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "image_from_network");
                 },
               ),
             ],
