@@ -22,6 +22,9 @@ import "view/infinite_list.dart";
 import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
 import 'package:flutter_examples_code/view/google_sign/google_sign.dart';
+// import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
+import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
+import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +43,9 @@ class MyApp extends StatelessWidget {
         // backgroundColor: Colors.black12,
       ),
       // 添加新页面
-      routes: {
+      routes: <String, WidgetBuilder> {
+        SettingsScreen.routeName: (BuildContext context) => new SettingsScreen(),
+        AccountScreen.routeName: (BuildContext context) => new AccountScreen(),
         "using_theme": (context)=> new UsingTheme(),
         "random_words": (context)=> new RandomWordsWidget(),
         "stateless_widget": (context)=> new StatelessDemo(),
@@ -63,6 +68,7 @@ class MyApp extends StatelessWidget {
         "infinite_list":(context)=> new RandonWordsList(),
         "persist_key_value":(context)=> new Perisist(),
         "tips_calculator":(context)=> new TipCalculator(),
+        // "navigation_draw": (context)=> new HomeScreen(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -79,6 +85,67 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var textStyle = new TextStyle(fontSize: 20.0);
+
+  Drawer getNavDrawer(BuildContext context){
+    var headChild = new DrawerHeader(child: 
+      new Center(
+        child: new Container(
+          padding: EdgeInsets.all(10.0),
+          child: new Column(
+            children: <Widget>[
+              new Card(
+                child: new Icon(
+                  Icons.person,
+                  color: Colors.blue,
+                  size: 80.0,
+                ),
+              ),
+              new Text(
+                "用户名",
+                style:TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.grey
+                )
+              )
+            ],
+          ),
+        )
+    ));
+    var aboutChild = new AboutListTile(
+      child: new Text("关于"),
+      applicationName: "应用名称",
+      applicationVersion: "v1.0.0",
+      applicationIcon: new Icon(Icons.adb),
+      icon: new Icon(Icons.info),
+    );
+
+    ListTile getNavItem(var icon, String s, String routeName){
+      return new ListTile(
+        leading: new Icon(icon),
+        title: new Text(s),
+        onTap: (){
+          setState(() {
+            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed(routeName);
+          });
+        },
+      );
+    }
+    var myNavChildren = [
+      headChild,
+      getNavItem(Icons.home, "Home", "/"),
+      getNavItem(Icons.settings, "Settings", SettingsScreen.routeName),
+      getNavItem(Icons.account_box, "Account", AccountScreen.routeName),
+      aboutChild
+    ];
+
+    ListView listView = new ListView(children: myNavChildren);
+    
+    return new Drawer(
+      child: listView,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -245,10 +312,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "tips_calculator");
                 },
               ),
+              // FlatButton(
+              //   child: Text('Navigation Draw',style: textStyle),
+              //   textColor: Colors.blue,
+              //   onPressed: (){
+              //     Navigator.pushNamed(context, "navigation_draw");
+              //   },
+              // ),
             ],
           ),
         ),
       ),
+      drawer: getNavDrawer(context),
     );
   }
 }
