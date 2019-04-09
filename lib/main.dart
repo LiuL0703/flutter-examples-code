@@ -21,6 +21,7 @@ import 'view/image_from_network.dart';
 import "view/infinite_list.dart";
 import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
+import 'package:flutter_examples_code/view/google_sign/google_sign.dart';
 
 void main() => runApp(MyApp());
 
