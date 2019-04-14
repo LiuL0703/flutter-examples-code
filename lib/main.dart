@@ -21,6 +21,9 @@ import 'view/image_from_network.dart';
 import "view/infinite_list.dart";
 import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
+import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
+import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
+import 'view/platform_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -62,6 +65,7 @@ class MyApp extends StatelessWidget {
         "infinite_list":(context)=> new RandonWordsList(),
         "persist_key_value":(context)=> new Perisist(),
         "tips_calculator":(context)=> new TipCalculator(),
+        "platform_view": (context)=> new PlatformView(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -244,6 +248,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "tips_calculator");
                 },
               ),
+              // FlatButton(
+              //   child: Text('Navigation Draw',style: textStyle),
+              //   textColor: Colors.blue,
+              //   onPressed: (){
+              //     Navigator.pushNamed(context, "navigation_draw");
+              //   },
+              // ),
             ],
           ),
         ),
