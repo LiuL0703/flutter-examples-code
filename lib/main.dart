@@ -22,6 +22,7 @@ import "view/infinite_list.dart";
 import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
 import 'view/whats_app.dart';
+import 'view/animation_demo.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         "tips_calculator":(context)=> new TipCalculator(),
         // "navigation_draw": (context)=> new HomeScreen(),
         "whats_app": (context)=> new WhatsAppScreen(),
+        "animation_demo": (context)=> new AnimationDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -320,6 +322,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "whats_app");
                 },
               ),
+              FlatButton(
+                child: Text('Animation Demo',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "animation_demo");
+                },
+              )
             ],
           ),
         ),
