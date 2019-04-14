@@ -10,7 +10,19 @@ class WhatsAppScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.lightGreen,
       ),
-      body: new ChatItem(),
+      body: new Container(
+        padding: EdgeInsets.only(top: 6.0),
+        child: new Column(
+          children: <Widget>[
+            new ChatItem(),
+            new Divider(),
+            new ChatItem(),
+            new Divider(),
+            new ChatItem(),
+            new Divider(),
+          ],
+        ),
+      )
     );
   }
 }
@@ -25,6 +37,7 @@ class ChatItem extends StatelessWidget {
     ),
   );
   final rightSection = new Container(
+    padding: EdgeInsets.only(right: 6.0),
     child: new Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -78,13 +91,12 @@ class ChatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60.0,
+      height: 50.0,
       child: new Row(
         children: <Widget>[
           leftSection,
           middleSection,
           rightSection,
-          new Divider(),
         ],
       ),
     );
