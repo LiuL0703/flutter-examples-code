@@ -21,6 +21,7 @@ import 'view/image_from_network.dart';
 import "view/infinite_list.dart";
 import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
+import 'view/whats_app.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
         "persist_key_value":(context)=> new Perisist(),
         "tips_calculator":(context)=> new TipCalculator(),
         // "navigation_draw": (context)=> new HomeScreen(),
+        "whats_app": (context)=> new WhatsAppScreen(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -311,13 +313,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "tips_calculator");
                 },
               ),
-              // FlatButton(
-              //   child: Text('Navigation Draw',style: textStyle),
-              //   textColor: Colors.blue,
-              //   onPressed: (){
-              //     Navigator.pushNamed(context, "navigation_draw");
-              //   },
-              // ),
+              FlatButton(
+                child: Text('Fake Whats App',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "whats_app");
+                },
+              ),
             ],
           ),
         ),
