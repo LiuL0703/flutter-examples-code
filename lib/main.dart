@@ -24,6 +24,7 @@ import 'view/tips_calculator.dart';
 import 'view/whats_app.dart';
 import 'view/animation_demo.dart';
 import 'view/custom_render_box.dart';
+import 'view/gestures.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -74,6 +75,7 @@ class MyApp extends StatelessWidget {
         "whats_app": (context)=> new WhatsAppScreen(),
         "animation_demo": (context)=> new AnimationDemo(),
         "custom_render_box": (context)=> new CustomRenderBox(),
+        "gestures_demo":(context)=> new GestureDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -336,6 +338,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "custom_render_box");
+                },
+              ),
+              FlatButton(
+                child: Text('Gestures Demo',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "gestures_demo");
                 },
               ),
             ],
