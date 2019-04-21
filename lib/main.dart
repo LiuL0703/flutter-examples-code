@@ -25,6 +25,7 @@ import 'view/whats_app.dart';
 import 'view/animation_demo.dart';
 import 'view/custom_render_box.dart';
 import 'view/gestures.dart';
+import 'view/media_query.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -76,6 +77,7 @@ class MyApp extends StatelessWidget {
         "animation_demo": (context)=> new AnimationDemo(),
         "custom_render_box": (context)=> new CustomRenderBox(),
         "gestures_demo":(context)=> new GestureDemo(),
+        "media_query": (context)=> new MediaQueryDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -345,6 +347,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue,
                 onPressed: (){
                   Navigator.pushNamed(context, "gestures_demo");
+                },
+              ),
+              FlatButton(
+                child: Text('Media Query Demo',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "media_query");
                 },
               ),
             ],
