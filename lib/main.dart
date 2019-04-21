@@ -216,7 +216,10 @@ class ListDemoItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      child: Text(title,style:TextStyle(fontSize: 20.0)),
+      child: Text(
+        title,
+        style:TextStyle(fontSize: 20.0)
+      ),
       textColor: Colors.blue,
       onPressed: (){
         Navigator.pushNamed(context, route);
