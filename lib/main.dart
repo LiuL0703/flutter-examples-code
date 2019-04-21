@@ -32,21 +32,6 @@ import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dar
 
 void main() => runApp(MyApp());
 
-class ListDemoItem extends StatelessWidget{
-  const ListDemoItem({Key key, this.title, this.route}):super(key:key);
-  final String title;
-  final String route;
-  @override
-  Widget build(BuildContext context) {
-    return FlatButton(
-      child: Text(title,style:TextStyle(fontSize: 20.0)),
-      textColor: Colors.blue,
-      onPressed: (){
-        Navigator.pushNamed(context, route);
-      },
-    );
-  }
-}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -137,7 +122,6 @@ class _MyHomePageState extends State<MyHomePage> {
     "Gestures Demo": "gestures_demo",
     "Media Query Demo": "media_query"
   };
-  var textStyle = new TextStyle(fontSize: 20.0);
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
       new Center(
@@ -221,6 +205,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       drawer: getNavDrawer(context),
+    );
+  }
+}
+
+class ListDemoItem extends StatelessWidget{
+  const ListDemoItem({Key key, this.title, this.route}):super(key:key);
+  final String title;
+  final String route;
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: Text(title,style:TextStyle(fontSize: 20.0)),
+      textColor: Colors.blue,
+      onPressed: (){
+        Navigator.pushNamed(context, route);
+      },
     );
   }
 }
