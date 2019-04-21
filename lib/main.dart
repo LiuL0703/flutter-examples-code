@@ -93,7 +93,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var listDemoMaps = {
+  final listDemoMaps = {
     "Using Theme Demo": "using_theme",
     "Random Words Demo": "random_words",
     "Stateless Widget": "stateless_widget",
