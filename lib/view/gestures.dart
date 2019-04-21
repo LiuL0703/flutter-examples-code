@@ -85,99 +85,111 @@ class _GestureDemoState extends State<GestureDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title:const Text('Gestures Demo'),
-      ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          GestureDetector(
-            onScaleStart: _scaleEnabled ? _handleScaleStart:null,
-            onScaleUpdate: _scaleEnabled ? _handleScaleUpdate: null,
-            onTap: _tapEnabled? _handleColorChange:null,
-            onDoubleTap: _doubleTapEnabled? _handleScaleReset: null,
-            onLongPress: _longPressEnabled? _handleDirectionChange:null,
-            child: CustomPaint(
-              painter: _GesturePainter(
-                zoom: _zoom,
-                offset: _offset,
-                swatch: swatch,
-                forward: _forward,
-                scaleEnabled: _scaleEnabled,
-                tapEnabled: _tapEnabled,
-                doubleTapEnabled: _doubleTapEnabled,
-                longPressEnabled: _longPressEnabled,
-              ),
+    return MaterialApp(
+      theme: ThemeData.dark(),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title:const Text('Gestures Demo'),
+          leading: IconButton(
+            icon: new Icon(
+              Icons.arrow_back,
+              semanticLabel:'返回',
             ),
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
           ),
-          Positioned(
-            bottom: 0.0,
-            left: 0.0,
-            child: Card(
-              child: Container(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Checkbox(
-                          value: _scaleEnabled,
-                          onChanged: (bool value){
-                            setState(() {
-                              _scaleEnabled = value;
-                            });
-                          }
-                        ),
-                        const Text('Scale'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Checkbox(
-                          value: _tapEnabled,
-                          onChanged: (bool value){
-                            setState(() {
-                              _tapEnabled = value;
-                            });
-                          },
-                        ),
-                        const Text('Tap-【change Color】')
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Checkbox(
-                          value: _doubleTapEnabled,
-                          onChanged: (bool value){
-                            setState(() {
-                              _doubleTapEnabled = value;
-                            });
-                          },
-                        ),
-                        const Text('d-Tap【Reset】'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Checkbox(
-                          value: _longPressEnabled,
-                          onChanged: (bool value){
-                            setState(() {
-                              _longPressEnabled = value;
-                            });
-                          },
-                        ),
-                        const Text('Long Press【direction Change】'),
-                      ],
-                    )
-                  ],
-                  crossAxisAlignment: CrossAxisAlignment.start,
+        ),
+        body: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            GestureDetector(
+              onScaleStart: _scaleEnabled ? _handleScaleStart:null,
+              onScaleUpdate: _scaleEnabled ? _handleScaleUpdate: null,
+              onTap: _tapEnabled? _handleColorChange:null,
+              onDoubleTap: _doubleTapEnabled? _handleScaleReset: null,
+              onLongPress: _longPressEnabled? _handleDirectionChange:null,
+              child: CustomPaint(
+                painter: _GesturePainter(
+                  zoom: _zoom,
+                  offset: _offset,
+                  swatch: swatch,
+                  forward: _forward,
+                  scaleEnabled: _scaleEnabled,
+                  tapEnabled: _tapEnabled,
+                  doubleTapEnabled: _doubleTapEnabled,
+                  longPressEnabled: _longPressEnabled,
                 ),
               ),
             ),
-          )
-        ],
+            Positioned(
+              bottom: 0.0,
+              left: 0.0,
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Checkbox(
+                            value: _scaleEnabled,
+                            onChanged: (bool value){
+                              setState(() {
+                                _scaleEnabled = value;
+                              });
+                            }
+                          ),
+                          const Text('Scale'),
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Checkbox(
+                            value: _tapEnabled,
+                            onChanged: (bool value){
+                              setState(() {
+                                _tapEnabled = value;
+                              });
+                            },
+                          ),
+                          const Text('Tap-【change Color】')
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Checkbox(
+                            value: _doubleTapEnabled,
+                            onChanged: (bool value){
+                              setState(() {
+                                _doubleTapEnabled = value;
+                              });
+                            },
+                          ),
+                          const Text('d-Tap【Reset】'),
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Checkbox(
+                            value: _longPressEnabled,
+                            onChanged: (bool value){
+                              setState(() {
+                                _longPressEnabled = value;
+                              });
+                            },
+                          ),
+                          const Text('Long Press【direction Change】'),
+                        ],
+                      )
+                    ],
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
