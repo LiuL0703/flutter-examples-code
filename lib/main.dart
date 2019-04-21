@@ -32,6 +32,21 @@ import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dar
 
 void main() => runApp(MyApp());
 
+class ListDemoItem extends StatelessWidget{
+  const ListDemoItem({Key key, this.title, this.route}):super(key:key);
+  final String title;
+  final String route;
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: Text(title,style:TextStyle(fontSize: 20.0)),
+      textColor: Colors.blue,
+      onPressed: (){
+        Navigator.pushNamed(context, route);
+      },
+    );
+  }
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -93,8 +108,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var listDemoMaps = {
+    "Using Theme Demo": "using_theme",
+    "Random Words Demo": "random_words",
+    "Stateless Widget": "stateless_widget",
+    "Stateful Widget": "stateful_widget",
+    "EditText Widget": "using_edittext",
+    "Load Local Image": "load_local_image",
+    "Load Local Json": "load_local_json",
+    "Using Http Get": "using_http_get",
+    "Using Alert Dialog": "using_alert_dialog",
+    "Using Stepper": "using_stepper",
+    "Using Tab": "using_tab",
+    "Using Bottom Nav Tab": "using_bottom_nav_tab",
+    "Using Custom Fonts": "using_custom_fonts",
+    "Using Gradient": "using_gradient",
+    "Using ListView": "using_listview",
+    "Using SnackBar": "using_snackbar",
+    "Grid Layout": "grid_layout",
+    "Dropdown Button": "dropdown_button",
+    "Image from Network":"image_from_network",
+    "Infinite List": "infinite_list",
+    "Persist Key Value": "persist_key_value",
+    "Tips Calculator": "tips_calculator",
+    "Fake Whats App": "whats_app",
+    "Animation Demo": "animation_demo",
+    "Custom Render Box": "custom_render_box",
+    "Gestures Demo": "gestures_demo",
+    "Media Query Demo": "media_query"
+  };
   var textStyle = new TextStyle(fontSize: 20.0);
-
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
       new Center(
@@ -155,6 +198,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  List<Widget> _initList(){
+    final List<Widget> demos = <Widget>[];
+    listDemoMaps.forEach((title,route)=> 
+      demos.add(ListDemoItem(title: title, route: route))
+    );
+    return demos;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,197 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FlatButton(
-                child: Text('Using Theme Demo',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_theme");
-                },
-              ),
-              FlatButton(
-                child: Text('Random Words Demo',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "random_words");
-                },
-              ),
-              FlatButton(
-                child: Text('Stateless Widget',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "stateless_widget");
-                },
-              ),
-              FlatButton(
-                child: Text('Stateful Widget',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "stateful_widget");
-                },
-              ),
-              FlatButton(
-                child: Text('EditText Widget',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_edittext");
-                },
-              ),
-              FlatButton(
-                child: Text('Load Local Image',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "load_local_image");
-                },
-              ),
-              FlatButton(
-                child: Text('Load Local Json',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "load_local_json");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Http Get',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_http_get");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Alert Dialog',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_alert_dialog");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Stepper',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_stepper");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Tab',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_tab");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Bottom Nav Tab',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_bottom_nav_tab");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Custom Fonts',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_custom_fonts");
-                },
-              ),
-              FlatButton(
-                child: Text('Using Gradient',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_gradient");
-                },
-              ),
-              FlatButton(
-                child: Text('Using ListView',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_listview");
-                },
-              ),
-              FlatButton(
-                child: Text('Using SnackBar',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "using_snackbar");
-                },
-              ),
-              FlatButton(
-                child: Text('Grid Layout',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "grid_layout");
-                },
-              ),
-              FlatButton(
-                child: Text('Dropdown Button',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "dropdown_button");
-                },
-              ),
-              FlatButton(
-                child: Text('Image from Network',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "image_from_network");
-                },
-              ),
-              FlatButton(
-                child: Text('Infinite List',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "infinite_list");
-                },
-              ),
-              FlatButton(
-                child: Text('Persist Key Value',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "persist_key_value");
-                },
-              ),
-              FlatButton(
-                child: Text('Tips Calculator',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "tips_calculator");
-                },
-              ),
-              FlatButton(
-                child: Text('Fake Whats App',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "whats_app");
-                },
-              ),
-              FlatButton(
-                child: Text('Animation Demo',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "animation_demo");
-                },
-              ),
-              FlatButton(
-                child: Text('Custom Render Box',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "custom_render_box");
-                },
-              ),
-              FlatButton(
-                child: Text('Gestures Demo',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "gestures_demo");
-                },
-              ),
-              FlatButton(
-                child: Text('Media Query Demo',style: textStyle),
-                textColor: Colors.blue,
-                onPressed: (){
-                  Navigator.pushNamed(context, "media_query");
-                },
-              ),
-            ],
+            children: _initList(),
           ),
         ),
       ),
