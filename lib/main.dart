@@ -23,6 +23,7 @@ import 'view/persist_key_value.dart';
 import 'view/tips_calculator.dart';
 import 'view/whats_app.dart';
 import 'view/animation_demo.dart';
+import 'view/custom_render_box.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         // "navigation_draw": (context)=> new HomeScreen(),
         "whats_app": (context)=> new WhatsAppScreen(),
         "animation_demo": (context)=> new AnimationDemo(),
+        "custom_render_box": (context)=> new CustomRenderBox(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -328,7 +330,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   Navigator.pushNamed(context, "animation_demo");
                 },
-              )
+              ),
+              FlatButton(
+                child: Text('Custom Render Box',style: textStyle),
+                textColor: Colors.blue,
+                onPressed: (){
+                  Navigator.pushNamed(context, "custom_render_box");
+                },
+              ),
             ],
           ),
         ),
