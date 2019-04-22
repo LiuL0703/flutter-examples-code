@@ -26,6 +26,7 @@ import 'view/animation_demo.dart';
 import 'view/custom_render_box.dart';
 import 'view/gestures.dart';
 import 'view/media_query.dart';
+import 'view/styled_text.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -78,6 +79,7 @@ class MyApp extends StatelessWidget {
         "custom_render_box": (context)=> new CustomRenderBox(),
         "gestures_demo":(context)=> new GestureDemo(),
         "media_query": (context)=> new MediaQueryDemo(),
+        "styled_text": (context)=> new StyleTextDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -120,7 +122,8 @@ class _MyHomePageState extends State<MyHomePage> {
     "Animation Demo": "animation_demo",
     "Custom Render Box": "custom_render_box",
     "Gestures Demo": "gestures_demo",
-    "Media Query Demo": "media_query"
+    "Media Query Demo": "media_query",
+    "Styled Text Demo": "styled_text",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
