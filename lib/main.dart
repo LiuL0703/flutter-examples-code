@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examples_code/view/animation/offsetdelay.dart';
 import 'view/using_theme.dart';
 import 'view/random_word.dart';
 import 'view/stateless_widgets.dart';
@@ -29,6 +30,7 @@ import 'view/media_query.dart';
 import 'view/styled_text.dart';
 import 'view/animation/easeing.dart';
 import 'view/animation/valuechange.dart';
+import 'view/animation/offsetdelay.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -84,6 +86,7 @@ class MyApp extends StatelessWidget {
         "media_query": (context)=> new MediaQueryDemo(),
         "styled_text": (context)=> new StyleTextDemo(),
         "value_change_animation": (context)=> new ValueChangeAnimation(),
+        "offset_delay_animation": (context)=> new OffsetDelayAnimation(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -128,8 +131,9 @@ class _MyHomePageState extends State<MyHomePage> {
     "Gestures Demo": "gestures_demo",
     "Media Query Demo": "media_query",
     "Styled Text Demo": "styled_text",
-    "Easing Animation Demo": "easing_animation",
+    "Easing Animation": "easing_animation",
     "Value Change Animation": "value_change_animation",
+    "OffsetDelay Animation": 'offset_delay_animation',
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
