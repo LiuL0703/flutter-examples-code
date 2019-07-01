@@ -27,6 +27,7 @@ import 'view/custom_render_box.dart';
 import 'view/gestures.dart';
 import 'view/media_query.dart';
 import 'view/styled_text.dart';
+import 'view/animation/easeing.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         SettingsScreen.routeName: (BuildContext context) => new SettingsScreen(),
         AccountScreen.routeName: (BuildContext context) => new AccountScreen(),
         "using_theme": (context)=> new UsingTheme(),
+        "easing_animation": (context) => new EasingAnimation(),
         "random_words": (context)=> new RandomWordsWidget(),
         "stateless_widget": (context)=> new StatelessDemo(),
         "stateful_widget": (context)=> new StatefulDemo(),
@@ -124,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Gestures Demo": "gestures_demo",
     "Media Query Demo": "media_query",
     "Styled Text Demo": "styled_text",
+    "Easing Animation Demo": "easing_animation",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
