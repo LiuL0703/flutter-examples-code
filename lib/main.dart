@@ -31,6 +31,7 @@ import 'view/styled_text.dart';
 import 'view/animation/easeing.dart';
 import 'view/animation/valuechange.dart';
 import 'view/animation/offsetdelay.dart';
+import 'view/animation/masking.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
         "styled_text": (context)=> new StyleTextDemo(),
         "value_change_animation": (context)=> new ValueChangeAnimation(),
         "offset_delay_animation": (context)=> new OffsetDelayAnimation(),
+        "masking_animation": (context)=> new MaskingAnimation(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -134,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Easing Animation": "easing_animation",
     "Value Change Animation": "value_change_animation",
     "OffsetDelay Animation": 'offset_delay_animation',
+    "Masking Animation":"masking_animation",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
