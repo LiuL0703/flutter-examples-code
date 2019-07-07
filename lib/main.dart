@@ -33,6 +33,7 @@ import 'view/animation/valuechange.dart';
 import 'view/animation/offsetdelay.dart';
 import 'view/animation/masking.dart';
 import 'view/animation/parenting.dart';
+import 'view/animation/springfreefalling.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -91,6 +92,7 @@ class MyApp extends StatelessWidget {
         "offset_delay_animation": (context)=> new OffsetDelayAnimation(),
         "masking_animation": (context)=> new MaskingAnimation(),
         "parenting_animation":(context)=> new ParentingAnimation(),
+        "spring_free_falling":(context)=> new SpringFreeFallingAnimation(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -140,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "OffsetDelay Animation": 'offset_delay_animation',
     "Masking Animation":"masking_animation",
     "Parenting Animation": "parenting_animation",
+    "Spring Free Falling":"spring_free_falling",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
