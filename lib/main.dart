@@ -32,6 +32,7 @@ import 'view/animation/easeing.dart';
 import 'view/animation/valuechange.dart';
 import 'view/animation/offsetdelay.dart';
 import 'view/animation/masking.dart';
+import 'view/animation/parenting.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -89,6 +90,7 @@ class MyApp extends StatelessWidget {
         "value_change_animation": (context)=> new ValueChangeAnimation(),
         "offset_delay_animation": (context)=> new OffsetDelayAnimation(),
         "masking_animation": (context)=> new MaskingAnimation(),
+        "parenting_animation":(context)=> new ParentingAnimation(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -137,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Value Change Animation": "value_change_animation",
     "OffsetDelay Animation": 'offset_delay_animation',
     "Masking Animation":"masking_animation",
+    "Parenting Animation": "parenting_animation",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
