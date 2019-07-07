@@ -20,7 +20,10 @@ class _MaskingAnimationState extends State<MaskingAnimation>
       duration: const Duration(seconds: 2),vsync: this)
       ..addStatusListener((status){
         if(status == AnimationStatus.completed){
-          Navigator.pop(context);
+          _controller.reverse();
+        }
+        if(status == AnimationStatus.dismissed){
+          _controller.forward();
         }
       });
 
@@ -58,6 +61,9 @@ class _MaskingAnimationState extends State<MaskingAnimation>
       animation: _controller,
       builder: (BuildContext context, Widget child){
         return Scaffold(
+          appBar: new AppBar(
+            title: new Text('Masking Animation'),
+          ),
           body: new Center(
             child: new Stack(
               children: <Widget>[

@@ -20,6 +20,9 @@ class _EasingAnimationState extends State<EasingAnimation>
       animation: _controller,
       builder: (BuildContext context, Widget child){
         return Scaffold(
+          appBar: new AppBar(
+            title: new Text('Ease Animation'),
+          ),
           body: Transform(
             transform: Matrix4.translationValues(_animation.value*width, 0.0, 0.0),
             child: new Center(
@@ -58,7 +61,10 @@ class _EasingAnimationState extends State<EasingAnimation>
         ))
         ..addStatusListener((status){
           if(status == AnimationStatus.completed){
-            Navigator.pop(context);
+            _controller.reverse();
+          }
+          if(status == AnimationStatus.dismissed){
+            _controller.forward();
           }
         });
         _controller.forward();

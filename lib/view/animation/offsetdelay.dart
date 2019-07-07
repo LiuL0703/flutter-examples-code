@@ -55,8 +55,11 @@ class _OffsetDelayAnimationState extends State<OffsetDelayAnimation>
           ),
         ))
         ..addStatusListener((status){
-          if (status == AnimationStatus.completed){
-            Navigator.pop(context);
+          if(status == AnimationStatus.completed){
+            _controller.reverse();
+          }
+          if(status == AnimationStatus.dismissed){
+            _controller.forward();
           }
         });
       _controller.forward();
@@ -71,6 +74,9 @@ class _OffsetDelayAnimationState extends State<OffsetDelayAnimation>
       animation: _controller,
       builder: (BuildContext context, Widget child){
         return new Scaffold(
+          appBar: new AppBar(
+            title: new Text('OffsetDelay'),
+          ),
           body: new Align(
             alignment: Alignment.center,
             child: new Container(

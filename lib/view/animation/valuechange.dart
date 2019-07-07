@@ -25,7 +25,7 @@ class _ValueChangeAnimationState extends State<ValueChangeAnimation>
         }
 
         if(status == AnimationStatus.dismissed){
-          Navigator.pop(context);
+          controller.forward();
         }
       });
   }
@@ -36,6 +36,9 @@ class _ValueChangeAnimationState extends State<ValueChangeAnimation>
       animation: controller,
       builder: (BuildContext context, Widget child){
         return Scaffold(
+          appBar: new AppBar(
+            title: new Text('Value Change'),
+          ),
           body: new Center(
             child: new Text(
               animation.value.toString(),
