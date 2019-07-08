@@ -26,6 +26,7 @@ import 'view/whats_app.dart';
 import 'view/animation_demo.dart';
 import 'view/custom_render_box.dart';
 import 'view/custom_form.dart';
+import 'view/swipe_dismiss.dart';
 import 'view/gestures.dart';
 import 'view/media_query.dart';
 import 'view/styled_text.dart';
@@ -88,6 +89,7 @@ class MyApp extends StatelessWidget {
         "animation_demo": (context)=> new AnimationDemo(),
         "custom_render_box": (context)=> new CustomRenderBox(),
         "custom_form":(context)=> new CustomForm(),
+        "swipe_to_dismiss":(context)=> new SwipeToDismiss(),
         "gestures_demo":(context)=> new GestureDemo(),
         "media_query": (context)=> new MediaQueryDemo(),
         "styled_text": (context)=> new StyleTextDemo(),
@@ -139,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Animation Demo": "animation_demo",
     "Custom Render Box": "custom_render_box",
     "Custom Form":"custom_form",
+    "Swipe to Dismiss": "swipe_to_dismiss",
     "Gestures Demo": "gestures_demo",
     "Media Query Demo": "media_query",
     "Styled Text Demo": "styled_text",
