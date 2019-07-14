@@ -245,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class ListDemoItem extends StatelessWidget{
-  const ListDemoItem({Key key, this.title, this.route}):super(key:key);
+  ListDemoItem({Key key, this.title, this.route}):super(key:key);
   final String title;
   final String route;
   @override
