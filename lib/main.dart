@@ -39,6 +39,7 @@ import 'view/animation/springfreefalling.dart';
 import 'view/animation/transformation.dart';
 import 'view/navigation_pass_data.dart';
 import 'view/http_background_parse.dart';
+import 'view/websocket.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -103,6 +104,7 @@ class MyApp extends StatelessWidget {
         "spring_free_falling":(context)=> new SpringFreeFallingAnimation(),
         "transition_animation":(context)=> new TransformationAnimation(),
         "http_background_parsed": (context)=> new HttpBackgroundParsed(),
+        "websocket_demo":(context)=> new WebSocketDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -158,6 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Spring Free Falling":"spring_free_falling",
     "Transition Animation":"transition_animation",
     "Http Background Parsed":"http_background_parsed",
+    "WebSocket Demo":"websocket_demo",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 

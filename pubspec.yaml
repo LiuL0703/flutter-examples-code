@@ -29,6 +29,7 @@ dependencies:
   meta: 1.1.6
   typed_data: 1.1.6
   vector_math: 2.0.8
+  web_socket_channel:
 
 dev_dependencies:
   flutter_test:
