@@ -37,6 +37,7 @@ import 'view/animation/masking.dart';
 import 'view/animation/parenting.dart';
 import 'view/animation/springfreefalling.dart';
 import 'view/animation/transformation.dart';
+import 'view/navigation_pass_data.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -91,6 +92,7 @@ class MyApp extends StatelessWidget {
         "custom_form":(context)=> new CustomForm(),
         "swipe_to_dismiss":(context)=> new SwipeToDismiss(),
         "gestures_demo":(context)=> new GestureDemo(),
+        "nav_pass_data":(context)=> new NavPassData(),
         "media_query": (context)=> new MediaQueryDemo(),
         "styled_text": (context)=> new StyleTextDemo(),
         "value_change_animation": (context)=> new ValueChangeAnimation(),
@@ -143,6 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Custom Form":"custom_form",
     "Swipe to Dismiss": "swipe_to_dismiss",
     "Gestures Demo": "gestures_demo",
+    "Navigation Pass Data":"nav_pass_data",
     "Media Query Demo": "media_query",
     "Styled Text Demo": "styled_text",
     "Easing Animation": "easing_animation",
