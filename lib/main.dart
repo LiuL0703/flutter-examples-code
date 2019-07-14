@@ -38,6 +38,7 @@ import 'view/animation/parenting.dart';
 import 'view/animation/springfreefalling.dart';
 import 'view/animation/transformation.dart';
 import 'view/navigation_pass_data.dart';
+import 'view/http_background_parse.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -101,6 +102,7 @@ class MyApp extends StatelessWidget {
         "parenting_animation":(context)=> new ParentingAnimation(),
         "spring_free_falling":(context)=> new SpringFreeFallingAnimation(),
         "transition_animation":(context)=> new TransformationAnimation(),
+        "http_background_parsed": (context)=> new HttpBackgroundParsed(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -155,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Parenting Animation": "parenting_animation",
     "Spring Free Falling":"spring_free_falling",
     "Transition Animation":"transition_animation",
-
+    "Http Background Parsed":"http_background_parsed",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 
