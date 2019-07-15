@@ -40,6 +40,7 @@ import 'view/animation/transformation.dart';
 import 'view/navigation_pass_data.dart';
 import 'view/http_background_parse.dart';
 import 'view/websocket.dart';
+import 'view/sqlite.dart';
 // import 'package:flutter_examples_code/view/navigation_drawer/screens/home.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/account.dart';
 import 'package:flutter_examples_code/view/navigation_drawer/screens/setting.dart';
@@ -105,6 +106,7 @@ class MyApp extends StatelessWidget {
         "transition_animation":(context)=> new TransformationAnimation(),
         "http_background_parsed": (context)=> new HttpBackgroundParsed(),
         "websocket_demo":(context)=> new WebSocketDemo(),
+        "sqlite_demo":(context)=> new SqliteDemo(),
       },
       home: MyHomePage(title: '首页'),
     );
@@ -161,6 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Transition Animation":"transition_animation",
     "Http Background Parsed":"http_background_parsed",
     "WebSocket Demo":"websocket_demo",
+    "Sqlite Demo":"sqlite_demo",
   };
   Drawer getNavDrawer(BuildContext context){
     var headChild = new DrawerHeader(child: 

@@ -30,6 +30,8 @@ dependencies:
   typed_data: 1.1.6
   vector_math: 2.0.8
   web_socket_channel:
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:
